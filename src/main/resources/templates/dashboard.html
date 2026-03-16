@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Panel principal</h1>
+    <div class="menu">
+        <a href="/patients" class="btn">Ver pacientes</a>
+        <a href="/patients/new" class="btn">Registrar paciente</a>
+        <a href="/appointments" class="btn">Ver citas</a>
+        <a href="/appointments/new" class="btn">Programar cita</a>
+        <a href="/logout" class="btn danger">Cerrar sesión</a>
+    </div>
+</div>
+</body>
+</html>

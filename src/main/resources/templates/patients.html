@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pacientes</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Listado de pacientes</h1>
+    <a href="/patients/new" class="btn">Nuevo paciente</a>
+    <a href="/dashboard" class="btn secondary">Volver</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th>Raza</th>
+            <th>Edad</th>
+            <th>Dueño</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${patients}">
+            <td th:text="${patient.id}"></td>
+            <td th:text="${patient.name}"></td>
+            <td th:text="${patient.species}"></td>
+            <td th:text="${patient.breed}"></td>
+            <td th:text="${patient.age}"></td>
+            <td th:text="${patient.owner}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Programar cita</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Programar cita</h1>
+
+    <form th:action="@{/appointments/save}" th:object="${appointment}" method="post">
+        <input type="text" th:field="*{patientName}" placeholder="Nombre del paciente" required>
+        <input type="date" th:field="*{date}" required>
+        <input type="time" th:field="*{time}" required>
+        <input type="text" th:field="*{reason}" placeholder="Motivo de consulta" required>
+        <input type="text" th:field="*{veterinarian}" placeholder="Veterinario asignado" required>
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+
+    <a href="/appointments" class="btn secondary">Volver</a>
+</div>
+</body>
+</html>

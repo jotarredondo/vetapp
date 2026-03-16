@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Citas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Listado de citas</h1>
+    <a href="/appointments/new" class="btn">Nueva cita</a>
+    <a href="/dashboard" class="btn secondary">Volver</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Paciente</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Motivo</th>
+            <th>Veterinario</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="appointment : ${appointments}">
+            <td th:text="${appointment.id}"></td>
+            <td th:text="${appointment.patientName}"></td>
+            <td th:text="${appointment.date}"></td>
+            <td th:text="${appointment.time}"></td>
+            <td th:text="${appointment.reason}"></td>
+            <td th:text="${appointment.veterinarian}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

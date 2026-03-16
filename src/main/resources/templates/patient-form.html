@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar paciente</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Registrar paciente</h1>
+
+    <form th:action="@{/patients/save}" th:object="${patient}" method="post">
+        <input type="text" th:field="*{name}" placeholder="Nombre" required>
+        <input type="text" th:field="*{species}" placeholder="Especie" required>
+        <input type="text" th:field="*{breed}" placeholder="Raza" required>
+        <input type="number" th:field="*{age}" placeholder="Edad" required>
+        <input type="text" th:field="*{owner}" placeholder="Dueño" required>
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+
+    <a href="/patients" class="btn secondary">Volver</a>
+</div>
+</body>
+</html>
