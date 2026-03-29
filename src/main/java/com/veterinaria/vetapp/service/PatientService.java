@@ -1,23 +1,28 @@
 package com.veterinaria.vetapp.service;
 
 import com.veterinaria.vetapp.model.Patient;
+import com.veterinaria.vetapp.repository.PatientRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PatientService {
 
-    private final List<Patient> patients = new ArrayList<>();
-    private Long nextId = 1L;
+    private final PatientRepository repository;
 
-    public List<Patient> findAll() {
-        return patients;
+    public PatientService(PatientRepository repository) {
+        this.repository = repository;
     }
 
-    public void save(Patient patient) {
-        patient.setId(nextId++);
-        patients.add(patient);
+    public List<Patient> findAll() {
+        return repository.findAll();
+    }
+
+    public Patient save(Patient patient) {
+        return repository.save(patient);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 }
