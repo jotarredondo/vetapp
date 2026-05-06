@@ -2,6 +2,7 @@ package com.veterinaria.vetapp.controller;
 
 import com.veterinaria.vetapp.model.Patient;
 import com.veterinaria.vetapp.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
